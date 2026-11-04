@@ -1,0 +1,24 @@
+{
+  "contentDigest": "4f95f268ed8fb3f8d3cbe71733e09473a8516ba8b83946f0e4b01917661c9632",
+  "dependencies": {
+    "corePR": "https://github.com/hayate-agent/core/pull/2",
+    "corePublicCommit": "601e48f42f4060b487aa7fffc2727a7404582ce7",
+    "coreState": "PR merged into public main on 2026-11-02; exact tested commit pinned, no package/image release required",
+    "plugins": "bundled audited plugin sources in selected Core snapshot; no independent checkout injected"
+  },
+  "files": [
+    {
+      "mode": "100644",
+      "path": "README.md",
+      "sha256": "10293c5ec534bd146075b59fc7a6d2816fa9b17702ba22138bbe4e422cc21922"
+    },
+    {
+      "mode": "100755",
+      "path": "run.sh",
+      "sha256": "c9d140b2ac44fd23bc9247aef0ea572c9c20a39f10d4c9e0ea511ebb8d6ef702"
+    }
+  ],
+  "historyPolicy": "fresh root; no source ancestry, private templates or author metadata",
+  "schema": 1,
+  "sourceSHA": "b11cbfc52d2dbc18af08bf4677d7b56372607de6"
+}
