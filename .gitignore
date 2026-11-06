@@ -1,0 +1,7 @@
+.env
+.env.*
+!.env.example
+config/hayate-agent.yaml
+config/models.json
+config/SOUL.md
+workspace/

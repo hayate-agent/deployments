@@ -1,0 +1,4 @@
+# Optional rootless Podman override: preserve the invoking user's UID for private config mounts.
+services:
+  hayate:
+    userns_mode: keep-id

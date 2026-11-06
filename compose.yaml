@@ -1,0 +1,43 @@
+services:
+  hayate:
+    build:
+      context: ${HAYATE_CORE_PATH:-../core}
+      dockerfile: ${HAYATE_DOCKERFILE:-../deployments/Dockerfile}
+    image: hayate-agent-example:local
+    init: true
+    restart: unless-stopped
+    stop_grace_period: 90s
+    ports:
+      - "127.0.0.1:${HAYATE_API_PORT:-8642}:8642"
+    environment:
+      HAYATE_AGENT_HOME: /home/node/.hayate-agent
+      PI_CODING_AGENT_DIR: /home/node/.pi/agent
+      API_SERVER_HOST: 0.0.0.0
+      API_SERVER_PORT: "8642"
+      API_SERVER_KEY: ${API_SERVER_KEY:?Run ./init.sh and configure .env first}
+      MODEL_API_KEY: ${MODEL_API_KEY:?Set your model provider key in .env}
+      MATRIX_HOMESERVER: ${MATRIX_HOMESERVER:-}
+      MATRIX_USER_ID: ${MATRIX_USER_ID:-}
+      MATRIX_DEVICE_ID: ${MATRIX_DEVICE_ID:-}
+      MATRIX_ACCESS_TOKEN: ${MATRIX_ACCESS_TOKEN:-}
+      MATRIX_ALLOWED_USERS: ${MATRIX_ALLOWED_USERS:-@owner:example.org}
+      MATRIX_REQUIRE_MENTION: "true"
+      MATRIX_E2EE: "true"
+    volumes:
+      - agent-home:/home/node
+      - ./config/hayate-agent.yaml:/home/node/.hayate-agent/hayate-agent.yaml:ro
+      - ./config/SOUL.md:/home/node/.hayate-agent/SOUL.md:ro
+      - ./config/models.json:/home/node/.pi/agent/models.json:ro
+      - ./workspace:/workspace
+    working_dir: /workspace
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 4g
+    healthcheck:
+      test: [CMD, node, -e, "fetch('http://127.0.0.1:8642/health').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"]
+      interval: 30s
+      timeout: 5s
+      start_period: 30s
+      retries: 3
+volumes:
+  agent-home:

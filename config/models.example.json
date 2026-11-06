@@ -1,0 +1,19 @@
+{
+  "providers": {
+    "openai-compatible": {
+      "baseUrl": "https://api.openai.com/v1",
+      "api": "openai-completions",
+      "apiKey": "$MODEL_API_KEY",
+      "models": [
+        {
+          "id": "gpt-4.1-mini",
+          "name": "GPT-4.1 mini",
+          "reasoning": false,
+          "input": ["text", "image"],
+          "contextWindow": 128000,
+          "maxTokens": 8192
+        }
+      ]
+    }
+  }
+}
