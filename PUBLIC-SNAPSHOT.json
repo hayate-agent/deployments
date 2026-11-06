@@ -1,24 +1,77 @@
 {
-  "contentDigest": "4f95f268ed8fb3f8d3cbe71733e09473a8516ba8b83946f0e4b01917661c9632",
+  "contentDigest": "6dfbf149dad0dd66473d76545bd518b4545ebee603a2916d6e6cef1f8da88edc",
   "dependencies": {
-    "corePR": "https://github.com/hayate-agent/core/pull/2",
-    "corePublicCommit": "601e48f42f4060b487aa7fffc2727a7404582ce7",
-    "coreState": "PR merged into public main on 2026-11-02; exact tested commit pinned, no package/image release required",
-    "plugins": "bundled audited plugin sources in selected Core snapshot; no independent checkout injected"
+    "corePublicCommit": "fb0fa2007bb02adf6854b24d91be54770300478c",
+    "coreRepository": "https://github.com/hayate-agent/core",
+    "plugins": "vendored and hash-verified by selected Core checkout"
   },
   "files": [
     {
       "mode": "100644",
+      "path": ".env.example",
+      "sha256": "14f521dab2a1e8092183216dd304202c03b7d82704237b8e4ef9ffb9c74219c3"
+    },
+    {
+      "mode": "100644",
+      "path": ".gitignore",
+      "sha256": "6fd78314a3e58b64f68979f852c2c418af411c3c82c9d02fa7c42eb70939fa55"
+    },
+    {
+      "mode": "100644",
+      "path": "Dockerfile",
+      "sha256": "30cb1dbc5758d4828994961a1b50eb9f386bb8c4fb925cd506d43b15ae679436"
+    },
+    {
+      "mode": "100644",
       "path": "README.md",
-      "sha256": "10293c5ec534bd146075b59fc7a6d2816fa9b17702ba22138bbe4e422cc21922"
+      "sha256": "342dd01b45788cc8f6f87e10bfd7dbce8ceeac4180307c6225c723ca1f531218"
+    },
+    {
+      "mode": "100644",
+      "path": "compose.podman.yaml",
+      "sha256": "22cfbc6a76b7d94f3252d6fa45ff8a3423af593a664e1c989ba084b7100884a6"
+    },
+    {
+      "mode": "100644",
+      "path": "compose.yaml",
+      "sha256": "40626ef45dd20061095a1116d178e1be73ae8ba75ae8a1184173a005feca19fe"
+    },
+    {
+      "mode": "100644",
+      "path": "config/SOUL.example.md",
+      "sha256": "a3c2325540fb43b74e45c25e2ac862fee78256d87be6fd0cb806bfdc78f793e9"
+    },
+    {
+      "mode": "100644",
+      "path": "config/hayate-agent.example.yaml",
+      "sha256": "d41f78fc3509fcc91f119da2df0d621007a12253de570267d920cb9b49211a84"
+    },
+    {
+      "mode": "100644",
+      "path": "config/models.example.json",
+      "sha256": "7c40e2350bdc088125e32a4361dd4d7275411107118b4b5a8744caba9f3d64f0"
+    },
+    {
+      "mode": "100755",
+      "path": "init.sh",
+      "sha256": "742b1541d4cc161a9c99d89e1611fb22fab5682204aaa4a2363b341d8990b3d2"
     },
     {
       "mode": "100755",
       "path": "run.sh",
       "sha256": "c9d140b2ac44fd23bc9247aef0ea572c9c20a39f10d4c9e0ea511ebb8d6ef702"
+    },
+    {
+      "mode": "100644",
+      "path": "test/test_examples.py",
+      "sha256": "339513315c4cce93bdf6975dd2132e266e9f3f61f61a13fde63e68f481d2b426"
     }
   ],
   "historyPolicy": "fresh root; no source ancestry, private templates or author metadata",
+  "maintenance": {
+    "description": "Generic public Compose deployment, configuration templates and setup tests.",
+    "kind": "runnable-compose-example"
+  },
   "schema": 1,
   "sourceSHA": "b11cbfc52d2dbc18af08bf4677d7b56372607de6"
 }

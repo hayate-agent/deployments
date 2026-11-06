@@ -3,10 +3,64 @@
 Deployment examples for [Hayate Agent](https://github.com/hayate-agent/core), an
 AI assistant for the terminal and Matrix.
 
-Use this repository to run a persistent assistant from a built Core checkout.
-Keep your own agent configuration, credentials and persistent data outside Git.
+Run an assistant with Docker Compose, or use the native foreground launcher.
+The examples include a standard agent profile, an OpenAI-compatible model provider
+and an optional Matrix gateway. Keep your own credentials and data outside Git.
 
-## Requirements
+## Quick start with Docker Compose
+
+Requires Docker Engine with Compose v2 (Docker Desktop on macOS/Windows) and Python 3
+for local setup. Clone the repositories as siblings:
+
+```sh
+git clone https://github.com/hayate-agent/core.git
+git clone https://github.com/hayate-agent/deployments.git
+cd deployments
+./init.sh
+```
+
+Set `MODEL_API_KEY` in the generated `.env`. The default model is
+`openai-compatible/gpt-4.1-mini`; change `config/models.json` and
+`config/hayate-agent.yaml` together to use another provider/model.
+
+```sh
+docker compose config --quiet
+docker compose up --build -d
+docker compose ps
+docker compose logs --tail=50 hayate
+```
+
+The API is available only on **localhost:8642**. Its generated key is in `.env`.
+The container's `/health` endpoint supplies Compose health status. The image is
+built from the sibling public Core checkout and includes its exact vendored
+plugins; no private registry or repository is needed. Configure
+`HAYATE_CORE_PATH`/`HAYATE_DOCKERFILE` in `.env` for a different directory layout.
+
+- **Configuration:** `config/` (mounted read-only); `init.sh` never overwrites it.
+- **Workspace:** `workspace/`, mounted as `/workspace`; only place files there that
+  the agent may access. The image runs as UID/GID 1000; grant that user workspace
+  access if your host uses a different UID. Protect secrets from the agent's tools.
+- **Persistent state:** the `agent-home` named volume holds conversations, queues
+  and Matrix device/crypto state. Back it up before updates.
+- **Secrets:** `.env` and generated configuration are ignored by Git. Do not publish them.
+- **Stop:** `docker compose down` preserves data; **`down -v` deletes agent state**.
+- **Update:** review the Core update, then `docker compose up --build -d`; graceful
+  shutdown has a 90-second window. Reconcile interrupted external actions first.
+
+For **rootless Podman**, retain private config permissions and your host UID with
+the optional override (do not use this file with Docker Engine):
+
+```sh
+docker-compose -f compose.yaml -f compose.podman.yaml up --build -d
+```
+
+For Matrix, fill in the `MATRIX_*` values in `.env`, including the authenticated
+bot device ID and your own allowed Matrix user ID, then recreate the container.
+Do not start another process against its Matrix crypto store.
+
+## Native foreground launcher
+
+### Requirements
 
 - A supported Linux, macOS or WSL2 host
 - Node.js 22.19 or newer; Node 24 LTS is recommended

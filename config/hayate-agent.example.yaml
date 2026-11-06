@@ -1,0 +1,11 @@
+agent: hayate
+cwd: /workspace
+timezone: UTC
+model: openai-compatible/gpt-4.1-mini
+tools: [read, bash, edit, write, grep, find, ls]
+loop:
+  busyMode: queue
+  drainSeconds: 60
+gateways:
+  progress: reduced
+  recoveryDiagnostics: false
