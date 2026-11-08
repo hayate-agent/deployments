@@ -125,7 +125,17 @@ Examples should be small, runnable and free of organization-specific identities,
 hostnames and secrets. Document required configuration, persistent paths, health
 checks and safe shutdown behavior. Open a pull request with validation instructions.
 
+## Related projects
+
+- [Core](https://github.com/hayate-agent/core) — agent runtime, terminal interface and APIs
+- [Plugins](https://github.com/hayate-agent/plugins) — optional integrations and backend services
+- [WebUI](https://github.com/hayate-agent/webui) — independent browser dashboard with its own Docker/Compose setup
+
+These examples run Core. The WebUI is installed separately; a Core container alone
+does not install or expose the standalone dashboard.
+
 ## License
 
-The examples in this repository are [CC0-1.0](https://creativecommons.org/publicdomain/zero/1.0/).
-Core and Plugins have their own Apache-2.0 licenses.
+The examples in this repository are [CC0-1.0](LICENSE), as declared previously.
+Core, Plugins and WebUI have their own Apache-2.0 licenses. The example license
+does not relicense those products or their third-party dependencies.

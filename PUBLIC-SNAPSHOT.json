@@ -1,5 +1,5 @@
 {
-  "contentDigest": "6dfbf149dad0dd66473d76545bd518b4545ebee603a2916d6e6cef1f8da88edc",
+  "contentDigest": "0ecc8c74dc4372497e806962e81404a9f08f588eecf72b18c1b61eb03aadd57c",
   "dependencies": {
     "corePublicCommit": "fb0fa2007bb02adf6854b24d91be54770300478c",
     "coreRepository": "https://github.com/hayate-agent/core",
@@ -23,8 +23,13 @@
     },
     {
       "mode": "100644",
+      "path": "LICENSE",
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499"
+    },
+    {
+      "mode": "100644",
       "path": "README.md",
-      "sha256": "342dd01b45788cc8f6f87e10bfd7dbce8ceeac4180307c6225c723ca1f531218"
+      "sha256": "41365a6d0a8aca32dd4800c5bde7dac860b560eea70bd791750a703728006a52"
     },
     {
       "mode": "100644",
@@ -73,5 +78,5 @@
     "kind": "runnable-compose-example"
   },
   "schema": 1,
-  "sourceSHA": "b11cbfc52d2dbc18af08bf4677d7b56372607de6"
+  "sourceSHA": "674b824cfc54813612e44ec0e2b8abcb79d15b5a"
 }
