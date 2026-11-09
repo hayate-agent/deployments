@@ -119,6 +119,13 @@ volumes or crypto stores as part of a routine update.
 For container builds and advanced deployment settings, see the
 [Core installation guide](https://github.com/hayate-agent/core/blob/main/docs/installation.md).
 
+## Public example updates
+
+These examples are published as reviewed snapshots. Changes are validated against
+the pinned public Core dependency before automatic integration. Unchanged example
+files do not require another publication when unrelated deployment configuration
+changes elsewhere. The product repositories retain their own release schedules.
+
 ## Contributing
 
 Examples should be small, runnable and free of organization-specific identities,
