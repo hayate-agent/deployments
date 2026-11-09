@@ -1,9 +1,10 @@
 {
-  "contentDigest": "0ecc8c74dc4372497e806962e81404a9f08f588eecf72b18c1b61eb03aadd57c",
+  "contentDigest": "5cc7d6f7df9e65041b6983fbfb1606d734a9792acf392af6045ba409c69b5290",
   "dependencies": {
-    "corePublicCommit": "fb0fa2007bb02adf6854b24d91be54770300478c",
-    "coreRepository": "https://github.com/hayate-agent/core",
-    "plugins": "vendored and hash-verified by selected Core checkout"
+    "corePR": "https://github.com/hayate-agent/core/pull/20",
+    "corePublicCommit": "175e9a615676813b2918318be09cbcc1a8f49c12",
+    "coreState": "Merged public Core tested with the runnable Compose example; offline vendored plugins",
+    "plugins": "bundled audited plugin sources in selected Core snapshot; no independent checkout injected"
   },
   "files": [
     {
@@ -29,7 +30,7 @@
     {
       "mode": "100644",
       "path": "README.md",
-      "sha256": "41365a6d0a8aca32dd4800c5bde7dac860b560eea70bd791750a703728006a52"
+      "sha256": "3b882b6f6cdcf2e494190cbb4a671a9786d55155293f0a305e3f9471eb05b1ab"
     },
     {
       "mode": "100644",
@@ -73,10 +74,7 @@
     }
   ],
   "historyPolicy": "fresh root; no source ancestry, private templates or author metadata",
-  "maintenance": {
-    "description": "Generic public Compose deployment, configuration templates and setup tests.",
-    "kind": "runnable-compose-example"
-  },
+  "inputSHA": "1d27f451142c7cd9ebfdb9656fcaf4dbfa2866ad",
   "schema": 1,
-  "sourceSHA": "674b824cfc54813612e44ec0e2b8abcb79d15b5a"
+  "sourceSHA": "f7a004b1449dd563577391d99c222c01ffa4c04c"
 }
