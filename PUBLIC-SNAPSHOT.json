@@ -76,5 +76,5 @@
   "historyPolicy": "fresh root; no source ancestry, private templates or author metadata",
   "inputSHA": "1d27f451142c7cd9ebfdb9656fcaf4dbfa2866ad",
   "schema": 1,
-  "sourceSHA": "6f4e67890a851de97b8eebb1ec41725eecc582c3"
+  "sourceSHA": "e57787da739315c80e33ee374a6d1e4459292590"
 }
